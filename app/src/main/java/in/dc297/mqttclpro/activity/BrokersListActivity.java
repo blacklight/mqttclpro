@@ -29,17 +29,12 @@ import in.dc297.mqttclpro.databinding.BrokerListItemBinding;
 import in.dc297.mqttclpro.dialog.AddTopicDialogFragment;
 import in.dc297.mqttclpro.dialog.AdsEnabledDialogFragment;
 import in.dc297.mqttclpro.entity.BrokerEntity;
-import in.dc297.mqttclpro.helpers.AdsHelper;
 import in.dc297.mqttclpro.services.MyMqttService;
 import io.reactivex.functions.Consumer;
 import io.requery.Persistable;
 import io.requery.android.QueryRecyclerAdapter;
 import io.requery.query.Result;
 import io.requery.reactivex.ReactiveEntityStore;
-
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
 
 public class BrokersListActivity extends AppCompatActivity {
 
@@ -85,7 +80,6 @@ public class BrokersListActivity extends AppCompatActivity {
                     }
                 });
         if(getAdsFirstTime()) new AdsEnabledDialogFragment().show(getFragmentManager(),"ADS_ENABLED_FRAGMENT");
-        AdsHelper.initializeAds((AdView)findViewById(R.id.adView),this);
     }
 
     @Override
